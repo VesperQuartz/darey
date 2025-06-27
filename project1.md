@@ -43,6 +43,7 @@ sudo dnf install git
 
 # Fedora
 sudo dnf install git
+![Git Version Command](./assets/git_version.png)
 
 Installing VS Code
 Windows:
@@ -86,6 +87,9 @@ bash
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 sudo dnf install code
+
+![Vsode Download Page](./assets/vs_code_download_page.png)
+![VsCode Editor](./assets/vscode_interface.png)
 
 Installing VirtualBox
 Windows:
@@ -160,15 +164,196 @@ VirtualBox:
     Download VirtualBox Extension Pack from the same download page for additional features
     Install it through VirtualBox → File → Preferences → Extensions
 
-Verification Commands:
+Step 1: Create a New Virtual Machine
 
-bash
+Open VirtualBox and click "New" button
+Name and Operating System:
 
-# Check Git
-git --version
+Name: Ubuntu Desktop (or your preferred name)
+Machine Folder: Leave default or choose custom location
+Type: Linux
+Version: Ubuntu (64-bit)
+Click "Next"
 
-# Check VS Code
-code --version
 
-# VirtualBox
-VBoxManage --version
+Memory Size:
+
+Recommended: 4096 MB (4GB) minimum
+For better performance: 8192 MB (8GB) or more
+Don't exceed 50% of your host machine's RAM
+Click "Next"
+
+
+Hard Disk:
+
+Select "Create a virtual hard disk now"
+Click "Create"
+
+
+Hard Disk File Type:
+
+Select "VDI (VirtualBox Disk Image)"
+Click "Next"
+
+
+Storage on Physical Hard Disk:
+
+Select "Dynamically allocated" (recommended)
+Click "Next"
+
+
+File Location and Size:
+
+Set size to at least 25GB (recommended: 50GB+)
+Click "Create"
+
+
+
+Step 2: Configure Virtual Machine Settings
+
+Select your VM and click "Settings"
+System Settings:
+
+Motherboard tab:
+
+Boot Order: Check "Optical" and move it above "Hard Disk"
+Enable "Enable I/O APIC"
+
+
+Processor tab:
+
+CPUs: 2 or more (don't exceed half of your host CPUs)
+Enable "Enable PAE/NX"
+
+
+Acceleration tab:
+
+Enable "VT-x/AMD-V" if available
+Enable "Nested Paging" if available
+
+
+
+
+Display Settings:
+
+Video Memory: 128 MB (maximum available)
+Enable "Enable 3D Acceleration"
+Monitor Count: 1
+
+
+Storage Settings:
+
+Click on "Empty" under "Controller: IDE"
+Click the CD icon next to "Optical Drive"
+Select "Choose a disk file..."
+Browse and select your Ubuntu ISO file
+Click "OK"
+
+
+Network Settings:
+
+Adapter 1: Enable Network Adapter
+Attached to: "NAT" (default is fine)
+
+
+Click "OK" to save settings
+
+Step 3: Install Ubuntu
+
+Start the VM by selecting it and clicking "Start"
+Ubuntu Boot Menu:
+
+Select "Try or Install Ubuntu"
+Press Enter
+
+
+Ubuntu Installer Welcome Screen:
+
+Choose your language
+Click "Install Ubuntu"
+
+
+Keyboard Layout:
+
+Select your keyboard layout
+Click "Continue"
+
+
+Updates and Other Software:
+
+Choose "Normal installation"
+Check "Download updates while installing Ubuntu"
+Check "Install third-party software..." (for graphics, Wi-Fi, etc.)
+Click "Continue"
+
+
+Installation Type:
+
+Select "Erase disk and install Ubuntu"
+Click "Install Now"
+Click "Continue" to confirm changes
+
+
+Where Are You:
+
+Select your time zone
+Click "Continue"
+
+
+Who Are You:
+
+Your name: Enter your full name
+Computer's name: Enter hostname (or keep default)
+Username: Enter username (lowercase, no spaces)
+Password: Enter strong password
+Confirm password
+Choose "Log in automatically" or "Require password"
+Click "Continue"
+
+
+Installation Process:
+
+Wait for installation to complete (15-30 minutes)
+The installer will show progress and Ubuntu features
+
+
+Installation Complete:
+
+Click "Restart Now"
+Press Enter when prompted to remove installation medium
+
+
+
+Step 4: First Boot and Initial Setup
+
+Login with your credentials
+Complete Setup Wizard:
+
+Connect to online accounts (optional)
+Enable Ubuntu Pro (optional)
+Help improve Ubuntu (choose preference)
+Privacy settings
+Ready to go!
+
+
+
+Step 5: Install VirtualBox Guest Additions
+Guest Additions improve performance and add features like:
+
+Better video resolution support
+Seamless mouse integration
+Shared clipboard
+Shared folders
+
+Method 1: Using the GUI
+
+In VirtualBox menu: Devices → Insert Guest Additions CD image
+Ubuntu will prompt to run the software
+Click "Run" and enter your password
+Wait for installation to complete
+Restart the VM
+![Virtual Box Welcome Screen](./assets/virtualbox_home.png)
+![Ubuntu Login Page](./assets/ubuntu_login.png)
+
+![Github Home](./assets/github_home.png)
+[!Aws Home page](./assets/aws_home.png)
