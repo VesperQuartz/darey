@@ -1,3 +1,7 @@
+![X](./assets/10.png)
+![X](./assets/11.png)
+![X](./assets/12.png)
+![X](./assets/13.png)
 ![Git Add](./assets/git_add.png)
 ![Status](./assets/git_status.png)
 ![Comit](./assets/git_commit.png)
